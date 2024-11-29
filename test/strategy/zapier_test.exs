@@ -24,8 +24,7 @@ defmodule Ueberauth.Strategy.ZapierTest do
         redirect_uri: "http://localhost:4000/auth/zapier/callback"
       })
 
-    routes =
-      Ueberauth.init()
+    routes = Ueberauth.init()
 
     resp = Ueberauth.call(conn, routes)
 
@@ -39,7 +38,7 @@ defmodule Ueberauth.Strategy.ZapierTest do
     assert %{
              "client_id" => "test_client_id",
              "response_type" => "code",
-             "scope" => "zap zap:write authentication profile",
+             "scope" => "profile"
            } = Plug.Conn.Query.decode(redirect_uri.query)
   end
 end

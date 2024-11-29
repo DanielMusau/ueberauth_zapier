@@ -2,7 +2,7 @@ import Config
 
 config :ueberauth, Ueberauth,
   providers: [
-    zapier: {UeberauthZapier, [default_scope: "zap zap:write authentication profile"]}
+    zapier: {UeberauthZapier, [default_scope: "profile"]}
   ]
 
 config :ueberauth, Ueberauth.Strategy.Zapier.OAuth,

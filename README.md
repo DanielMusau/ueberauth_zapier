@@ -21,7 +21,7 @@
     ```elixir
     config :ueberauth, Ueberauth,
       providers: [
-        zapier: {Ueberauth.Strategy.Zapier, [default_scope: "zap zap:write authentication profile"]},
+        zapier: {Ueberauth.Strategy.Zapier, [default_scope: "profile"]},
       ]
     ```
 

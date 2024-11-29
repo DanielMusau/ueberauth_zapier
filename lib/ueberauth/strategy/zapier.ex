@@ -4,21 +4,21 @@ defmodule Ueberauth.Strategy.Zapier do
 
   When configuring the strategy in the Überauth provides, you can specify some defaults.
 
-  * `default_scope` - The default scopes to request from Zapier when authenticating. Default `zap zap:write authentication profile`.
+  * `default_scope` - The default scopes to request from Zapier when authenticating. Default `profile`.
   * `oauth2_module` - The OAuth2 module to use for authentication. Default `Ueberauth.Strategy.Zapier.OAuth`.
 
   ```elixir
 
   config :ueberauth, Ueberauth,
     providers: [
-      zapier: {Ueberauth.Strategy.Zapier, [default_scope: "zap zap:write authentication profile"]}
+      zapier: {Ueberauth.Strategy.Zapier, [default_scope: "profile"]}
     ]
   ```
   """
 
   use Ueberauth.Strategy,
     oauth2_module: Ueberauth.Strategy.Zapier.OAuth,
-    default_scope: "zap zap:write authentication profile"
+    default_scope: "profile"
 
   alias Ueberauth.Auth.Info
   alias Ueberauth.Auth.Extra
