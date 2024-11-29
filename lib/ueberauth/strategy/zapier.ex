@@ -17,8 +17,7 @@ defmodule Ueberauth.Strategy.Zapier do
   """
 
   use Ueberauth.Strategy,
-    oauth2_module: Ueberauth.Strategy.Zapier.OAuth,
-    default_scope: "profile"
+    oauth2_module: Ueberauth.Strategy.Zapier.OAuth
 
   alias Ueberauth.Auth.Info
   alias Ueberauth.Auth.Extra
