@@ -30,8 +30,7 @@
     ```elixir
     config :ueberauth, Ueberauth.Strategy.Zapier.OAuth,
       client_id: System.get_env("ZAPIER_CLIENT_ID"),
-      client_secret: System.get_env("ZAPIER_CLIENT_SECRET"),
-      redirect_uri: System.get_env("ZAPIER_REDIRECT_URI")
+      client_secret: System.get_env("ZAPIER_CLIENT_SECRET")
     ```
 
 1.  Include the Überauth plug in your router pipeline:

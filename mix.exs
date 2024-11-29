@@ -3,6 +3,7 @@ defmodule UeberauthZapier.MixProject do
 
   @source_url "https://github.com/DanielMusau/ueberauth_zapier"
   @version "0.1.0"
+
   def project do
     [
       app: :ueberauth_zapier,
