@@ -1,31 +1,41 @@
 # Überauth Zapier
 
-[![Hex Version](https://img.shields.io/hexpm/v/ueberauth_zapier.svg)](https://hex.pm/packages/ueberauth_zapier)
+[![Hex.pm](https://img.shields.io/hexpm/v/ueberauth_zapier.svg)](https://hex.pm/packages/ueberauth_zapier)
+[![Documentation](https://img.shields.io/badge/hex-docs-blue)](https://hexdocs.pm/ueberauth_zapier)
 
-> Zapier OAuth2 strategy for Überauth.
+> Ueberauth plugin for Zapier OAuth.
+
+## What is this?
+[Ueberauth](https://github.com/ueberauth/ueberauth) is an authentication framework for Elixir applications that specializes in [OAuth](https://oauth.net/). This library is one of many [plugins](https://github.com/ueberauth/ueberauth/wiki/List-of-Strategies) (called Strategies) that allow Ueberauth to integrate with different identity providers. Specifically, this one implements an OAuth integration with Zapier.
 
 ## Installation
 
-1. Setup your application ntegration in Zapier Development Dashboard https://developer.zapier.com/
+1. Setup your application integration in Zapier Development Dashboard https://developer.zapier.com/
 
-1. Add `:ueberauth_zapier` to your list of dependencies in `mix.exs`:
+2. Add `:ueberauth_zapier` to your list of dependencies in `mix.exs`:
 
     ```elixir
     def deps do
-      [{:ueberauth_zapier, "~> 0.1.0"}]
+      [
+        {:ueberauth, "~> 0.10"},
+        {:oauth2, "~> 2.1"},
+        {:ueberauth_zapier, "~> 0.1.0"}
+      ]
     end
     ```
 
-1. Add Zapier to your Überauth configuration:
+3. Add Zapier to your Überauth configuration:
 
     ```elixir
     config :ueberauth, Ueberauth,
       providers: [
+        # Configure Zapier OAuth strategy with 'profile' scope to get user profile.
+        # Additional scopes can be added as needed, separated by spaces
         zapier: {Ueberauth.Strategy.Zapier, [default_scope: "profile"]},
       ]
     ```
 
-1.  Update your provider configuration:
+4.  Update your provider configuration:
 
     ```elixir
     config :ueberauth, Ueberauth.Strategy.Zapier.OAuth,
@@ -33,7 +43,7 @@
       client_secret: System.get_env("ZAPIER_CLIENT_SECRET")
     ```
 
-1.  Include the Überauth plug in your router pipeline:
+5.  Include the Überauth plug in your router pipeline:
 
     ```elixir
     defmodule TestZapierWeb.Router do
@@ -46,7 +56,7 @@
     end
     ```
 
-1.  Add the request and callback routes:
+6.  Add the request and callback routes:
 
     ```elixir
     scope "/auth", TestZapierWeb do
@@ -57,7 +67,7 @@
     end
     ```
 
-1. Create a new controller or use an existing controller that implements callbacks to deal with `Ueberauth.Auth` and `Ueberauth.Failure` responses from Zapier.
+7. Create a new controller or use an existing controller that implements callbacks to deal with `Ueberauth.Auth` and `Ueberauth.Failure` responses from Zapier.
 
     ```elixir
       defmodule TestZapierWeb.AuthController do
