@@ -19,7 +19,7 @@
       [
         {:ueberauth, "~> 0.10"},
         {:oauth2, "~> 2.1"},
-        {:ueberauth_zapier, "~> 0.1.0"}
+        {:ueberauth_zapier, "~> 0.1.1"}
       ]
     end
     ```
