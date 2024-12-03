@@ -3,7 +3,7 @@
 [![Hex.pm](https://img.shields.io/hexpm/v/ueberauth_zapier.svg)](https://hex.pm/packages/ueberauth_zapier)
 [![Documentation](https://img.shields.io/badge/hex-docs-blue)](https://hexdocs.pm/ueberauth_zapier)
 
-> Ueberauth plugin for Zapier OAuth.
+> Ueberauth plugin for Zapier OAuth Strategy.
 
 ## What is this?
 [Ueberauth](https://github.com/ueberauth/ueberauth) is an authentication framework for Elixir applications that specializes in [OAuth](https://oauth.net/). This library is one of many [plugins](https://github.com/ueberauth/ueberauth/wiki/List-of-Strategies) (called Strategies) that allow Ueberauth to integrate with different identity providers. Specifically, this one implements an OAuth integration with Zapier.
